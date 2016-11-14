@@ -1,17 +1,20 @@
 import React, {Component} from 'react'
 import {View, Text} from 'react-native'
+import {Provider, connect} from 'react-redux'
+import store from './store'
+import App from './modules/app'
 
+class Main extends Component {
 
-class App extends Component {
-
-    render(){
-        return(
-          <View>
-              <Text style={{fontSize:60}}>Hello world!!!</Text>
-          </View>
+    render() {
+        return (
+            <Provider store={store}>
+                <App.SplashScreen></App.SplashScreen>
+            </Provider>
         );
     }
 }
 
 
-export default App
+// export default connect()(App)
+export default Main
